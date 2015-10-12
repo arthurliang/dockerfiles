@@ -1,0 +1,40 @@
+#
+# Dockerfile for chinadns
+#
+
+FROM ubuntu:14.04
+MAINTAINER Arthur Liang <arthurnreply@outlook.com>
+
+ENV DNS_VER 1.3.2
+ENV DNS_URL https://github.com/clowwindy/ChinaDNS/releases/download/${DNS_VER}/chinadns-${DNS_VER}.tar.gz
+ENV DNS_FILE chinadns.tar.gz
+ENV DNS_MD5 f3ece30f2a453d25cc22ef6e1ef579b0
+
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential curl dnsmasq pdnsd supervisor \
+    && mkdir chinadns \
+        && cd chinadns \
+        && curl -sSL ${DNS_URL} -o ${DNS_FILE} \
+        && echo "${DNS_MD5} ${DNS_FILE}" | md5sum -c \
+        && tar xzf ${DNS_FILE} --strip 1 \
+        && ./configure \
+        && make install \
+        && cd .. \
+        && rm -rf chinadns \
+    && apt-get remove -y build-essential \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /opt/dns
+    && curl http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest \
+        | grep ipv4 \
+            | grep CN \
+                | awk -F\| '{printf("%s/%d\n", $4, 32-log($5)/log(2))}' > /opt/dns/chnroute.txt
+
+ADD ./pdnsd.conf /opt/dns/
+ADD ./services.conf /etc/supervisor/conf.d/
+
+VOLUME /opt/dns
+EXPOSE 53/tcp 53/udp
+
+CMD supervisord -n -c /etc/supervisor/supervisord.conf
