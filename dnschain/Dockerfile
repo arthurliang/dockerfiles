@@ -25,7 +25,8 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /opt/dns \
+RUN echo "loglevel=debug" >> /etc/supervisor/supervisord.conf \
+    && mkdir -p /opt/dns \
     && curl http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest \
         | grep ipv4 \
             | grep CN \
