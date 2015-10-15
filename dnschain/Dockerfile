@@ -26,16 +26,16 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN echo "loglevel=debug" >> /etc/supervisor/supervisord.conf \
-    && mkdir -p /opt/dns \
+    && mkdir -p /opt/dnschain \
     && curl http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest \
         | grep ipv4 \
             | grep CN \
-                | awk -F\| '{printf("%s/%d\n", $4, 32-log($5)/log(2))}' > /opt/dns/chnroute.txt
+                | awk -F\| '{printf("%s/%d\n", $4, 32-log($5)/log(2))}' > /opt/dnschain/chnroute.txt
 
-ADD ./pdnsd.conf /opt/dns/
+ADD ./pdnsd.conf /opt/dnschain/
 ADD ./services.conf /etc/supervisor/conf.d/
 
-VOLUME /opt/dns
+VOLUME /opt/dnschain
 EXPOSE 53/tcp 53/udp
 
 CMD supervisord -n -c /etc/supervisor/supervisord.conf
