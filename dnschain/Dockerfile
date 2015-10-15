@@ -2,7 +2,7 @@
 # Dockerfile for dnschain
 #
 
-FROM arthurliang/ubuntu
+FROM ubuntu:14.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
 ENV DNS_VER 1.3.2
