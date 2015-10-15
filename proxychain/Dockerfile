@@ -2,8 +2,7 @@
 # Dockerfile for ProxyChain
 #
 
-#FROM ubuntu:14.04
-FROM arthurliang/ubuntu
+FROM ubuntu:14.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
 RUN apt-get update \

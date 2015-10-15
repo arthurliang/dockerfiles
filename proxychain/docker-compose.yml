@@ -1,12 +1,12 @@
 proxyc-cfg-data-only:
-  image: arthurliang/tpc
+  image: arthurliang/proxychain
   volumes:
     - /opt/proxychain
   command:
     echo 'data only container'
 
 dnschain:
-  image: arthurliang/tpc
+  image: arthurliang/proxychain
   volumes_from:
     - proxyc-cfg-data-only
   ports:
