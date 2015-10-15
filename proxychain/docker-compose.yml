@@ -1,0 +1,16 @@
+proxyc-cfg-data-only:
+  image: arthurliang/tpc
+  volumes:
+    - /opt/proxychain
+  command:
+    echo 'data only container'
+
+dnschain:
+  image: arthurliang/tpc
+  volumes_from:
+    - proxyc-cfg-data-only
+  ports:
+    - "1080:1080/tcp"
+    - "8123:8123/tcp"
+    - "9001:9001/tcp"
+  restart: always
