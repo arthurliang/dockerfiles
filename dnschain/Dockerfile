@@ -33,6 +33,7 @@ RUN echo "loglevel=debug" >> /etc/supervisor/supervisord.conf \
                 | awk -F\| '{printf("%s/%d\n", $4, 32-log($5)/log(2))}' > /opt/dnschain/chnroute.txt
 
 COPY pdnsd.conf /opt/dnschain/
+COPY supervisord.conf /etc/supervisor/
 COPY services.conf /etc/supervisor/conf.d/
 
 VOLUME /opt/dnschain
