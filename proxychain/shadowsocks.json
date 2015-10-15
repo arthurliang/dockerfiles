@@ -1,40 +1,40 @@
 {
-  "method": "aes-256-cfb"
+  "method": "aes-256-cfb",
   "local_address": "127.0.0.1",
   "local_port": 1981,
   "server_port": 55500,
   "server": "1.2.3.4",
-  "password": "123456",
+  "password": "123456"
 }
 {
-  "method": "aes-256-cfb"
+  "method": "aes-256-cfb",
   "local_address": "127.0.0.1",
   "local_port": 1982,
   "server_port": 55500,
   "server": "1.2.3.5",
-  "password": "123456",
+  "password": "123456"
 }
 {
-  "method": "aes-256-cfb"
+  "method": "aes-256-cfb",
   "local_address": "127.0.0.1",
   "local_port": 1983,
   "server_port": 55500,
   "server": "1.2.3.6",
-  "password": "123456",
+  "password": "123456"
 }
 {
-  "method": "aes-256-cfb"
+  "method": "aes-256-cfb",
   "local_address": "127.0.0.1",
   "local_port": 1984,
   "server_port": 55500,
   "server": "1.2.3.7",
-  "password": "123456"
+  "password": "123456
 }
 {
-  "method": "aes-256-cfb"
+  "method": "aes-256-cfb",
   "local_address": "127.0.0.1",
   "local_port": 1985,
   "server_port": 55500,
   "server": "1.2.3.8",
-  "password": "123456",
+  "password": "123456"
 }
