@@ -1,7 +1,7 @@
 dnsc-cfg-data-only:
   image: arthurliang/dnschain
   volumes:
-    - /opt/dns
+    - /opt/dnschain
   command:
     echo 'data only container'
 
