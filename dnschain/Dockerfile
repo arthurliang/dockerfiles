@@ -32,8 +32,8 @@ RUN echo "loglevel=debug" >> /etc/supervisor/supervisord.conf \
             | grep CN \
                 | awk -F\| '{printf("%s/%d\n", $4, 32-log($5)/log(2))}' > /opt/dnschain/chnroute.txt
 
-ADD ./pdnsd.conf /opt/dnschain/
-ADD ./services.conf /etc/supervisor/conf.d/
+COPY pdnsd.conf /opt/dnschain/
+COPY services.conf /etc/supervisor/conf.d/
 
 VOLUME /opt/dnschain
 EXPOSE 53/tcp 53/udp
