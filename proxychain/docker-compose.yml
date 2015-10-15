@@ -5,7 +5,7 @@ proxyc-cfg-data-only:
   command:
     echo 'data only container'
 
-dnschain:
+proxychain:
   image: arthurliang/proxychain
   volumes_from:
     - proxyc-cfg-data-only
