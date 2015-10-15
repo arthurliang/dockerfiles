@@ -1,5 +1,5 @@
 #
-# Dockerfile for chinadns
+# Dockerfile for dnschain
 #
 
 FROM ubuntu:14.04
