@@ -12,4 +12,5 @@ dnschain:
   ports:
     - "53:53/tcp"
     - "53:53/udp"
+    - "9000:9001/tcp"
   restart: always
