@@ -5,8 +5,12 @@
 FROM ubuntu:14.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
-RUN apt-get update \
-    && apt-get install -y supervisor haproxy polipo python-pip jq \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+       supervisor \
+       haproxy \
+       polipo \
+       python-pip \
+       jq \
     && pip install shadowsocks \
     && apt-get remove -y python-pip \
     && apt-get autoremove -y \

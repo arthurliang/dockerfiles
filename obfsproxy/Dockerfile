@@ -5,8 +5,11 @@
 FROM ubuntu:14.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
-RUN apt-get update \
-    && apt-get install -y build-essential curl python python-dev \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+       build-essential \
+       curl \
+       python \
+       python-dev \
     && curl https://bootstrap.pypa.io/get-pip.py | python \
     && pip install obfsproxy \
     && apt-get purge -y build-essential python-dev \
