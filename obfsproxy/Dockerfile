@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && pip install obfsproxy \
     && apt-get purge -y build-essential python-dev \
     && apt-get autoremove -y \
-    && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
 ENV LOG_MIN_SEVERITY info

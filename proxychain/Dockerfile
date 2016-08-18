@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && pip install shadowsocks \
     && apt-get remove -y python-pip \
     && apt-get autoremove -y \
-    && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /opt/proxychain
 
