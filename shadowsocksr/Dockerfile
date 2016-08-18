@@ -1,5 +1,5 @@
 #
-# Dockerfile for ProxyChain
+# Dockerfile for ShadowsocksR
 #
 
 FROM ubuntu:16.04
