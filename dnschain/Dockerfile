@@ -10,7 +10,7 @@ ENV DNS_URL https://github.com/clowwindy/ChinaDNS/releases/download/${DNS_VER}/c
 ENV DNS_FILE chinadns.tar.gz
 ENV DNS_MD5 f3ece30f2a453d25cc22ef6e1ef579b0
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
        build-essential \
        curl \
        dnsmasq \
