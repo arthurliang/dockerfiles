@@ -14,6 +14,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 COPY init.sh /init.sh
 COPY user-config.json /opt/shadowsocks/
+COPY supervisord.conf /etc/supervisor/
 COPY services.conf /etc/supervisor/conf.d/
 
 EXPOSE 8888
