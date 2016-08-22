@@ -19,4 +19,4 @@ COPY services.conf /etc/supervisor/conf.d/
 
 EXPOSE 8888
 
-ENTRYPOINT ["/init.sh", "/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
+ENTRYPOINT ["/init.sh", "/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
