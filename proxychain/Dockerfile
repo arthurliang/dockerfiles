@@ -5,7 +5,7 @@
 FROM ubuntu:14.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
        supervisor \
        haproxy \
        polipo \
