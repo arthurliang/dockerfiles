@@ -1,40 +1,52 @@
 {
-  "method": "aes-256-cfb",
-  "local_address": "127.0.0.1",
-  "local_port": 1981,
-  "server_port": 55500,
-  "server": "1.2.3.4",
-  "password": "123456"
+    "server": "0.0.0.1",
+    "server_port": 8888,
+    "local_address": "127.0.0.1",
+    "local_port": 1981,
+    "password": "mpswd",
+    "timeout": 120,
+    "udp_timeout": 60,
+    "method": "aes-256-cfb",
+    "protocol": "auth_sha1_v2",
+    "obfs": "http_simple",
+    "obfs_param": "baidu.com"
 }
 {
-  "method": "aes-256-cfb",
-  "local_address": "127.0.0.1",
-  "local_port": 1982,
-  "server_port": 55500,
-  "server": "1.2.3.5",
-  "password": "123456"
+    "server": "0.0.0.2",
+    "server_port": 8888,
+    "local_address": "127.0.0.1",
+    "local_port": 1982,
+    "password": "mpswd",
+    "timeout": 120,
+    "udp_timeout": 60,
+    "method": "aes-256-cfb",
+    "protocol": "auth_sha1_v2",
+    "obfs": "http_simple",
+    "obfs_param": "baidu.com"
 }
 {
-  "method": "aes-256-cfb",
-  "local_address": "127.0.0.1",
-  "local_port": 1983,
-  "server_port": 55500,
-  "server": "1.2.3.6",
-  "password": "123456"
+    "server": "0.0.0.3",
+    "server_port": 8888,
+    "local_address": "127.0.0.1",
+    "local_port": 1983,
+    "password": "mpswd",
+    "timeout": 120,
+    "udp_timeout": 60,
+    "method": "aes-256-cfb",
+    "protocol": "auth_sha1_v2",
+    "obfs": "http_simple",
+    "obfs_param": "baidu.com"
 }
 {
-  "method": "aes-256-cfb",
-  "local_address": "127.0.0.1",
-  "local_port": 1984,
-  "server_port": 55500,
-  "server": "1.2.3.7",
-  "password": "123456
-}
-{
-  "method": "aes-256-cfb",
-  "local_address": "127.0.0.1",
-  "local_port": 1985,
-  "server_port": 55500,
-  "server": "1.2.3.8",
-  "password": "123456"
+    "server": "0.0.0.4",
+    "server_port": 8888,
+    "local_address": "127.0.0.1",
+    "local_port": 1984,
+    "password": "mpswd",
+    "timeout": 120,
+    "udp_timeout": 60,
+    "method": "aes-256-cfb",
+    "protocol": "auth_sha1_v2",
+    "obfs": "http_simple",
+    "obfs_param": "baidu.com"
 }
