@@ -7,8 +7,8 @@
     "timeout": 120,
     "udp_timeout": 60,
     "method": "aes-256-cfb",
-    "protocol": "auth_sha1_v2",
-    "obfs": "http_simple",
+    "protocol": "auth_sha1_v4",
+    "obfs": "tls1.2_ticket_auth",
     "obfs_param": "baidu.com"
 }
 {
@@ -20,8 +20,8 @@
     "timeout": 120,
     "udp_timeout": 60,
     "method": "aes-256-cfb",
-    "protocol": "auth_sha1_v2",
-    "obfs": "http_simple",
+    "protocol": "auth_sha1_v4",
+    "obfs": "tls1.2_ticket_auth",
     "obfs_param": "baidu.com"
 }
 {
@@ -33,8 +33,8 @@
     "timeout": 120,
     "udp_timeout": 60,
     "method": "aes-256-cfb",
-    "protocol": "auth_sha1_v2",
-    "obfs": "http_simple",
+    "protocol": "auth_sha1_v4",
+    "obfs": "tls1.2_ticket_auth",
     "obfs_param": "baidu.com"
 }
 {
@@ -46,7 +46,7 @@
     "timeout": 120,
     "udp_timeout": 60,
     "method": "aes-256-cfb",
-    "protocol": "auth_sha1_v2",
-    "obfs": "http_simple",
+    "protocol": "auth_sha1_v4",
+    "obfs": "tls1.2_ticket_auth",
     "obfs_param": "baidu.com"
 }
