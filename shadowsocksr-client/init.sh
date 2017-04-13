@@ -8,7 +8,7 @@ SSR_PROTO=${SSR_PROTO:-auth_sha1_v2}
 SSR_OBFS=${SSR_OBFS:-http_simple}
 SSR_OBFPA=${SSR_OBFPA:-baidu.com}
 
-sed -i "s/0.0.0.0/$SSR_SERVER/g" /opt/shadowsocks/user-config.json
+sed -i "s/server_dns_name/$SSR_SERVER/g" /opt/shadowsocks/user-config.json
 sed -i "s/8888/$SSR_SV_PORT/g" /opt/shadowsocks/user-config.json
 sed -i "s/1080/$SSR_CL_PORT/g" /opt/shadowsocks/user-config.json
 sed -i "s/mpswd/$SSR_PASS/g" /opt/shadowsocks/user-config.json
