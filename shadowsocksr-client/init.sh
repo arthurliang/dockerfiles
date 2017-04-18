@@ -1,5 +1,5 @@
 #!/bin/bash
-SSR_SERVER=${SSR_SERVER:-0.0.0.0}
+SSR_SERVER=${SSR_SERVER:-server_dns_name}
 SSR_SV_PORT=${SSR_SV_PORT:-8888}
 SSR_CL_PORT=${SSR_CL_PORT:-1080}
 SSR_PASS=${SSR_PASS:-mpswd}
