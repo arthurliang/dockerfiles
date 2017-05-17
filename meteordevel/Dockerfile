@@ -6,12 +6,11 @@ FROM ubuntu:16.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
 # build arguments
-ARG APP_PACKAGES="locales curl build-essential python libssl-dev"
+ARG APP_PACKAGES="locales bsdtar curl build-essential python libssl-dev"
 ARG APP_LOCALE=en_US
 ARG APP_CHARSET=UTF-8
 ARG APP_USER=meteorapp
 ARG APP_USER_DIR=/home/${APP_USER}
-
 # run environment
 ENV APP_PORT=${APP_PORT:-3000}
 ENV APP_TEST_PORT=${APP_TEST_PORT:-5000}
@@ -25,6 +24,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 # set the locale (required by Meteor)
 RUN localedef ${APP_LOCALE}.${APP_CHARSET} -i ${APP_LOCALE} -f ${APP_CHARSET}
+
+# avoid tar fail when build on hub.docker.com
+RUN export tar='bsdtar'
 
 # install Meteor
 RUN curl -sL https://install.meteor.com | sed s/--progress-bar/-sL/g | /bin/sh
