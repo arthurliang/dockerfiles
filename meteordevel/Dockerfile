@@ -6,7 +6,7 @@ FROM ubuntu:16.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
 # build arguments
-ARG APP_PACKAGES="curl build-essential python libssl-dev"
+ARG APP_PACKAGES="locales curl build-essential python libssl-dev"
 ARG APP_LOCALE=en_US
 ARG APP_CHARSET=UTF-8
 ARG APP_USER=meteorapp
