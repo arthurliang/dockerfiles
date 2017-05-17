@@ -14,7 +14,7 @@ ARG APP_USER_DIR=/home/${APP_USER}
 
 # run environment
 ENV APP_PORT=${APP_PORT:-3000}
-ENV APP_TEST_PORT=${APP_TEST_PORT:-3001}
+ENV APP_TEST_PORT=${APP_TEST_PORT:-5000}
 ENV APP_ROOT=${APP_ROOT:-/app}
 
 # install tools
@@ -46,4 +46,4 @@ EXPOSE $APP_TEST_PORT
 VOLUME $APP_ROOT
 
 ENTRYPOINT [ "/bin/bash" ]
-CMD ["/usr/local/bin/meteor"]
+CMD ["meteor"]
