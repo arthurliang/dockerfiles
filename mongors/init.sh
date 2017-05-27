@@ -12,5 +12,5 @@ done
 status=$(mongo --host rs1 --quiet --eval 'rs.status().members.length')
 if [ $? -ne 0 ]; then
   # Replicaset not yet configured
-  mongo --host rs1 --eval 'rs.initiate({ _id: "rs0", version: 1, members: [ { _id: 0, host : "rs1" }, { _id: 1, host : "rs2" }, { _id: 2, host : "rs3" } ], settings: { getLastErrorDefaults: { w: "majority", wtimeout: 30000 } } })';
+  mongo --host rs1 --eval 'rs.initiate({ _id: "rs0", version: 1, members: [ { _id: 0, host : "rs1", "priority" : 1 }, { _id: 1, host : "rs2", "priority" : 0.5 }, { _id: 2, host : "rs3", "priority" : 0.3 } ], settings: { getLastErrorDefaults: { w: "majority", wtimeout: 30000 } } })';
 fi
