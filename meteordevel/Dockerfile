@@ -47,5 +47,7 @@ EXPOSE $APP_PORT
 EXPOSE $APP_TEST_PORT
 VOLUME $APP_ROOT
 
-ENTRYPOINT [ "/bin/bash" ]
+COPY init.sh /init.sh
+
+ENTRYPOINT [ "/init.sh" ]
 CMD ["meteor"]
