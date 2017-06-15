@@ -6,15 +6,16 @@ FROM ubuntu:16.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
 # build arguments
-ARG APP_PACKAGES="locales bsdtar curl git build-essential python libssl-dev"
+ARG APP_PACKAGES="locales bsdtar curl git build-essential python libssl-dev rsync"
 ARG APP_LOCALE=en_US
 ARG APP_CHARSET=UTF-8
 ARG APP_USER=meteorapp
 ARG APP_USER_DIR=/home/${APP_USER}
+
 # run environment
 ENV APP_PORT=${APP_PORT:-3000}
 ENV APP_TEST_PORT=${APP_TEST_PORT:-5000}
-ENV APP_ROOT=${APP_ROOT:-/app}
+ENV APP_ROOT=${APP_ROOT:-/home/meteorapp}
 
 # install tools
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -45,7 +46,7 @@ WORKDIR ${APP_ROOT}
 # exposed ports and volumes
 EXPOSE $APP_PORT
 EXPOSE $APP_TEST_PORT
-VOLUME $APP_ROOT
+VOLUME /app
 
 COPY init.sh /init.sh
 
