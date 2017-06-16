@@ -6,7 +6,7 @@ FROM ubuntu:16.04
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
 # build arguments
-ARG APP_PACKAGES="locales bsdtar curl git build-essential python libssl-dev rsync"
+ARG APP_PACKAGES="locales bsdtar curl git build-essential python libssl-dev libfontconfig rsync"
 ARG APP_LOCALE=en_US
 ARG APP_CHARSET=UTF-8
 ARG APP_USER=meteorapp
