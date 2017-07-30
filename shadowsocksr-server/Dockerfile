@@ -13,7 +13,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     && git clone -b manyuser https://github.com/shadowsocksr-backup/shadowsocksr.git
 
 COPY init.sh /init.sh
-COPY user-config.json /opt/shadowsocks/
+COPY user-config.json /opt/shadowsocksr/
 COPY supervisord.conf /etc/supervisor/
 COPY services.conf /etc/supervisor/conf.d/
 
