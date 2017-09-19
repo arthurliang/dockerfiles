@@ -8,6 +8,7 @@ MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 RUN gem install redis
 ADD https://github.com/antirez/redis/blob/unstable/src/redis-trib.rb /redis-trib.rb
 ADD https://github.com/maiha/rcm.cr/releases/download/v0.7.5/rcm /rcm
+RUN chmod +x redis-trib.rb rcm
 COPY init.sh /init.sh
 
 ENTRYPOINT ["/init.sh"]
