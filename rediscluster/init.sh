@@ -7,7 +7,6 @@ REDIS_CLUST_RQR_FL_CVRG=${REDIS_CLUST_RQR_FL_CVRG:-no}
 REDIS_CLUST_ANNC_IP=${REDIS_CLUST_ANNC_IP:-22.33.44.55}
 REDIS_CLUST_ANNC_BUS_PORT=${REDIS_CLUST_ANNC_BUS_PORT:-6380}
 REDIS_APPD_ONLY=${REDIS_APPD_ONLY:-yes}
-REDIS_RQ_PSWD=${REDIS_RQ_PSWD:-z6g1laYf9jXHHaMWQZZtMmagZ3r8dcsDNjb3tkIeM0k=}
 
 sed -i "s/6379/$REDIS_SV_PORT/g" /usr/local/etc/redis/redis.conf
 sed -i "s/suffix/$REDIS_SV_PORT/g" /usr/local/etc/redis/redis.conf
@@ -18,7 +17,6 @@ sed -i "s/RQ_FL_CVRG_EN/$REDIS_CLUST_RQR_FL_CVRG/g" /usr/local/etc/redis/redis.c
 sed -i "s/22.33.44.55/$REDIS_CLUST_ANNC_IP/g" /usr/local/etc/redis/redis.conf
 sed -i "s/6380/$REDIS_CLUST_ANNC_BUS_PORT/g" /usr/local/etc/redis/redis.conf
 sed -i "s/APD_ONLY/$REDIS_APPD_ONLY/g" /usr/local/etc/redis/redis.conf
-sed -i "s/RQ_PSWD/$REDIS_RQ_PSWD/g" /usr/local/etc/redis/redis.conf
 
 exec "$@"
 
