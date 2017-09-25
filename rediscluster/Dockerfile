@@ -2,7 +2,7 @@
 # Dockerfile for redis (cluster)
 #
 
-FROM redis:4.0.1-alpine
+FROM redis:4.0.2-alpine
 MAINTAINER Arthur Liang <arthurnreply@outlook.com>
 
 RUN mkdir -p /usr/local/etc/redis
