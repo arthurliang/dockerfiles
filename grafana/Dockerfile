@@ -1,5 +1,5 @@
 #
-# Dockerfile for ubuntu
+# Dockerfile for grafana
 #
 
 FROM grafana/grafana
