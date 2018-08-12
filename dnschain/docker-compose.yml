@@ -1,16 +1,19 @@
-dnsc-cfg-data-only:
-  image: arthurliang/dnschain
-  volumes:
-    - /opt/dnschain
-  command:
-    echo 'data only container'
+version: "2.0"
 
-dnschain:
-  image: arthurliang/dnschain
-  volumes_from:
-    - dnsc-cfg-data-only
-  ports:
-    - "53:53/tcp"
-    - "53:53/udp"
-    - "9000:9001/tcp"
-  restart: always
+services:
+  dnsc-cfg-data-only:
+    image: arthurliang/dnschain
+    volumes:
+      - /opt/dnschain
+    command:
+      echo 'data only container'
+
+  dnschain:
+    image: arthurliang/dnschain
+    volumes_from:
+      - dnsc-cfg-data-only
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      # - "9000:9001/tcp"
+    restart: always

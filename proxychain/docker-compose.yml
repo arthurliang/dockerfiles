@@ -1,16 +1,18 @@
-proxyc-cfg-data-only:
-  image: arthurliang/proxychain
-  volumes:
-    - /opt/proxychain
-  command:
-    echo 'data only container'
+version: "2.0"
 
-proxychain:
-  image: arthurliang/proxychain
-  volumes_from:
-    - proxyc-cfg-data-only
-  ports:
-    - "1080:1080/tcp"
-    - "8123:8123/tcp"
-    - "9001:9001/tcp"
-  restart: always
+services:
+  proxychain:
+    image: arthurliang/proxychain:0.1
+    ports:
+      - "1082:1080/tcp"
+      - "8123:8123/tcp"
+      - "9001:9001/tcp"
+    environment:
+      - SSR_SERVER001=az87761-ea-aldm001.eastasia.cloudapp.azure.com
+      - SSR_SERVER002=az87761-sea-aldm001.eastasia.cloudapp.azure.com
+      - SSR_SERVER003=az87761-je-aldm001.eastasia.cloudapp.azure.com
+      - SSR_SERVER004=az87761-wu-aldm001.eastasia.cloudapp.azure.com
+      - SSR_SV_PORT=55419
+      - SSR_PASS=*P>|cEfsROH.4<@v]M@~
+    restart: always
+

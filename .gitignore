@@ -3,3 +3,4 @@ nginx
 softethervpn
 shadowsocks
 pdnsd
+*.yml

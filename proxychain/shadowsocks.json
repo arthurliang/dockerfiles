@@ -1,7 +1,7 @@
 {
     "server": "0.0.0.1",
     "server_port": 8888,
-    "local_address": "127.0.0.1",
+    "local_address": "0.0.0.0",
     "local_port": 1981,
     "password": "mpswd",
     "timeout": 120,
@@ -14,7 +14,7 @@
 {
     "server": "0.0.0.2",
     "server_port": 8888,
-    "local_address": "127.0.0.1",
+    "local_address": "0.0.0.0",
     "local_port": 1982,
     "password": "mpswd",
     "timeout": 120,
@@ -27,7 +27,7 @@
 {
     "server": "0.0.0.3",
     "server_port": 8888,
-    "local_address": "127.0.0.1",
+    "local_address": "0.0.0.0",
     "local_port": 1983,
     "password": "mpswd",
     "timeout": 120,
@@ -40,7 +40,7 @@
 {
     "server": "0.0.0.4",
     "server_port": 8888,
-    "local_address": "127.0.0.1",
+    "local_address": "0.0.0.0",
     "local_port": 1984,
     "password": "mpswd",
     "timeout": 120,
